@@ -1,5 +1,5 @@
 # Data Structure
-:smile Implementation of data structure algorithm by C
+:triangular_ruler: Implementation of data structure algorithm by C
 
 ## LinearList
 
