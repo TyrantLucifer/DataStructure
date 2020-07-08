@@ -1,7 +1,7 @@
 # Data Structure
 :triangular_ruler: Implementation of data structure algorithm by C
 
-## LinearList
+## Linear List
 
 - [x] Sequence List
 - [x] Single Link List
