@@ -40,7 +40,7 @@ int printStr(Str* S){
 * S: the pointer of Str
 * next: the pointer of next array
 */
-int printNext(Str* S, char* next){
+int printNext(Str* S, int* next){
     for(int i = 0; i < S->length; i++){
         printf("%d\t", next[i]);
     }
@@ -84,8 +84,8 @@ int strAssign(Str* S, char* str){
 * get next array of Str
 * S: the pointer of Str
 */
-char* getNext(Str* S){
-    char* next = (char*)malloc(sizeof(char) * S->length);
+int* getNext(Str* S){
+    int* next = (int*)malloc(sizeof(int) * S->length);
     int i = 0, j = -1;
     next[i] = j;
     while(i < S->length - 1){
@@ -106,8 +106,8 @@ char* getNext(Str* S){
 * get nextval array of Str
 * S: the pointer of Str
 */
-char* getNextval(Str* S){
-    char* nextval = (char*)malloc(sizeof(char) * S->length);
+int* getNextval(Str* S){
+    int* nextval = (int*)malloc(sizeof(int) * S->length);
     int i = 0, j = -1;
     nextval[i] = j;
     while(i < S->length - 1){
@@ -136,7 +136,7 @@ char* getNextval(Str* S){
 * subStr: the pointer of sub Str 
 * next: the next array's pointer of sub Str
 */
-int kmpMatch(Str* masterStr, Str* subStr, char* next){
+int kmpMatch(Str* masterStr, Str* subStr, int* next){
     int i = 0, j = 0;
     while(i < masterStr->length && j < subStr->length){
         if(j == -1 || masterStr->str[i] == subStr->str[j]){
@@ -159,13 +159,13 @@ int kmpMatch(Str* masterStr, Str* subStr, char* next){
 /*main function*/
 int main(){
     Str* S1 = initStr();
-    strAssign(S1, "ABABABBCDABBC");
+    strAssign(S1, "ABABA");
     printStr(S1);
     Str* S2 = initStr();
-    strAssign(S2, "ABABAAB");
+    strAssign(S2, "ABABA");
     printStr(S2);
-    char* next = getNext(S2);
-    char* nextval = getNextval(S2);
+    int* next = getNext(S2);
+    int* nextval = getNextval(S2);
     printNext(S2, next);
     printNext(S2, nextval);
     if(kmpMatch(S1, S2, next)){
