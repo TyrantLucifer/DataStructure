@@ -14,6 +14,5 @@
 
 - [x] Sequence Stack
 - [x] Link Stack
-
 - [x] Sequence Queue
 - [x] Link Queue
