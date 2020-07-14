@@ -8,7 +8,6 @@
 - [x] Loop Single Link List
 - [x] Double Link List
 - [x] Loop Double Link List
-- [ ] Static Link List
 
 ## Stack and Queue
 
