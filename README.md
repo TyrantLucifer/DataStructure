@@ -24,4 +24,5 @@
 
 - [x] Binary Tree(Recursive Traverse)
 - [x] Binary Tree(Non Recursive Traverse)
-
+- [x] Binary Search Tree
+- [x] Huffman Tree
