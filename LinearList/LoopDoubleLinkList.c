@@ -87,11 +87,11 @@ int delete(Node* L, int data) {
  * print all items in a link list
  * @param L the head pointer of link list
  */
-void printList(Node* L){
-    Node* node = L->next;
-    while(node != L){
-        printf("%d -> ", node->data);
-        node = node->next;
+void printList(Node* L) {
+    Node* node = L -> next;
+    while (node != L) {
+        printf("%d -> ", node -> data);
+        node = node -> next;
     }
     printf("NULL\n");
 }
