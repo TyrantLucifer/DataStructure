@@ -10,14 +10,14 @@
 
 ## Stack and Queue
 
-- [x] Sequence Stack
 - [x] Link Stack
-- [x] Sequence Queue
 - [x] Link Queue
+- [x] Circular Queue
 
 ## String
 
-- [x] KMP
+- [x] KMP Match
+- [x] Force Match
 
 ## Tree
 
