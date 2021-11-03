@@ -68,6 +68,7 @@ int deQueue(Node* Q) {
         Node* node = Q->next;
         Q->next = Q->next->next;
         Q->next->pre = Q;
+        Q->data--;
         return node->data;
     }
 }
