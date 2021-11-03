@@ -55,17 +55,17 @@ void headInsert(Node* L, int data) {
  * @param L the head pointer of link list
  * @param data the data you want to insert
  */
-void tailInsert(Node* L, int data){
+void tailInsert(Node* L, int data) {
     Node* node = L;
     Node* n = (Node*)malloc(sizeof(Node));
-    n->data = data;
-    while(node->next){
-        node = node->next;
+    n -> data = data;
+    while (node -> next) {
+        node = node -> next;
     }
-    n->next = node->next;
-    node->next = n;
-    n->pre = node;
-    L->data ++;
+    n -> next = node -> next;
+    node -> next = n;
+    n -> pre = node;
+    L -> data ++;
 }
 
 /**
@@ -74,17 +74,19 @@ void tailInsert(Node* L, int data){
  * @param data the data you want to delete
  * @return success flag
  */
-int delete(Node* L, int data){
+int delete(Node* L, int data) {
     Node* node = L->next;
-    while(node){
-        if(node->data == data){
-            //删除操作
-            node->pre->next = node->next;
-            node->next->pre = node->pre;
+    while (node) {
+        if (node -> data == data) {
+            node -> pre -> next = node -> next;
+            if (node -> next) {
+                node -> next -> pre = node -> pre;
+            }
+            L -> data --;
             free(node);
             return TRUE;
         }
-        node = node->next;
+        node = node -> next;
     }
     return FALSE;
 }
@@ -93,11 +95,11 @@ int delete(Node* L, int data){
  * print all items in a link list
  * @param L the head pointer of link list
  */
-void printList(Node* L){
-    Node* node = L->next;
-    while(node){
-        printf("%d -> ", node->data);
-        node = node->next;
+void printList(Node* L) {
+    Node* node = L -> next;
+    while (node) {
+        printf("%d -> ", node -> data);
+        node = node -> next;
     }
     printf("NULL\n");
 }
@@ -116,8 +118,7 @@ int main()
     tailInsert(L, 5);
     tailInsert(L, 6);
     printList(L);
-    delete(L, 1);
-    delete(L, 3);
+    delete(L, 6);
     printList(L);
     return 0;
 }
