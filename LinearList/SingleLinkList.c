@@ -1,9 +1,9 @@
-/*************************************************************************
-* File Name: SingleLinkList.c
-* Author: tyrantlucifer
-* E-mail: tyrantlucifer@gmail.com
-* Blog: https://tyrantlucifer.com
- ************************************************************************/
+/**
+ * File Name: SingleLinkList.c
+ * Author: tyrantlucifer
+ * E-mail: tyrantlucifer@gmail.com
+ * Blog: https://tyrantlucifer.com
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -16,7 +16,7 @@
 typedef struct Node {
     int data;
     struct Node* next;
-}Node;
+} Node;
 
 /**
  * init a link list
@@ -24,8 +24,8 @@ typedef struct Node {
  */
 Node* initList() {
     Node* L = (Node*)malloc(sizeof(Node));
-    L -> data = 0;
-    L -> next = NULL;
+    L->data = 0;
+    L->next = NULL;
     return L;
 }
 
@@ -36,10 +36,10 @@ Node* initList() {
  */
 void headInsert(Node* L, int data) {
     Node* node = (Node*)malloc(sizeof(Node));
-    node -> data = data;
-    node -> next = L->next;
-    L -> next = node;
-    L -> data ++;
+    node->data = data;
+    node->next = L->next;
+    L->next = node;
+    L->data++;
 }
 
 /**
@@ -49,14 +49,14 @@ void headInsert(Node* L, int data) {
  */
 void tailInsert(Node* L, int data) {
     Node* node = L;
-    for(int i = 0; i < L -> data; i++) {
+    for (int i = 0; i < L->data; i++) {
         node = node->next;
     }
     Node* n = (Node*)malloc(sizeof(Node));
-    n -> data = data;
-    n -> next = NULL;
-    node -> next = n;
-    L -> data ++;
+    n->data = data;
+    n->next = NULL;
+    node->next = n;
+    L->data++;
 }
 
 /**
@@ -65,18 +65,18 @@ void tailInsert(Node* L, int data) {
  * @param data the data you want to delete
  * @return success flag
  */
-int delete(Node* L, int data) {
+int delete (Node* L, int data) {
     Node* preNode = L;
-    Node* node = L -> next;
-    while(node){
-        if(node -> data == data) {
-            preNode -> next = node->next;
+    Node* node = L->next;
+    while (node) {
+        if (node->data == data) {
+            preNode->next = node->next;
             free(node);
-            L -> data --;
+            L->data--;
             return TRUE;
         }
         preNode = node;
-        node = node -> next;
+        node = node->next;
     }
     return FALSE;
 }
@@ -86,10 +86,10 @@ int delete(Node* L, int data) {
  * @param L the head pointer of link list
  */
 void printList(Node* L) {
-    Node* node = L -> next;
-    while(node){
-        printf("node = %d\n", node -> data);
-        node = node -> next;
+    Node* node = L->next;
+    while (node) {
+        printf("node = %d\n", node->data);
+        node = node->next;
     }
 }
 
@@ -108,10 +108,9 @@ int main() {
     tailInsert(L, 7);
     printList(L);
 
-    if (delete(L, 3)) {
+    if (delete (L, 3)) {
         printf("success delete\n");
-    }
-    else {
+    } else {
         printf("fail delete\n");
     }
     printList(L);

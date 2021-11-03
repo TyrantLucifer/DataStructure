@@ -1,9 +1,9 @@
-/*************************************************************************
-* File Name: DoubleLinkList.c
-* Author: tyrantlucifer
-* E-mail: tyrantlucifer@gmail.com
-* Blog: https://tyrantlucifer.com
- ************************************************************************/
+/**
+ * File Name: DoubleLinkList.c
+ * Author: tyrantlucifer
+ * E-mail: tyrantlucifer@gmail.com
+ * Blog: https://tyrantlucifer.com
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,7 +17,7 @@ typedef struct Node {
     int data;
     struct Node* pre;
     struct Node* next;
-}Node;
+} Node;
 
 /**
  * init a link list
@@ -25,9 +25,9 @@ typedef struct Node {
  */
 Node* initList() {
     Node* L = (Node*)malloc(sizeof(Node));
-    L -> data = 0;
-    L -> pre = NULL;
-    L -> next = NULL;
+    L->data = 0;
+    L->pre = NULL;
+    L->next = NULL;
     return L;
 }
 
@@ -38,15 +38,14 @@ Node* initList() {
  */
 void headInsert(Node* L, int data) {
     Node* node = (Node*)malloc(sizeof(Node));
-    node -> data = data;
-    node -> next = L -> next;
-    node -> pre = L;
-    if (L -> next) {
-        L -> next -> pre = node;
-        L -> next = node;
-    }
-    else {
-        L -> next = node;
+    node->data = data;
+    node->next = L->next;
+    node->pre = L;
+    if (L->next) {
+        L->next->pre = node;
+        L->next = node;
+    } else {
+        L->next = node;
     }
 }
 
@@ -58,14 +57,14 @@ void headInsert(Node* L, int data) {
 void tailInsert(Node* L, int data) {
     Node* node = L;
     Node* n = (Node*)malloc(sizeof(Node));
-    n -> data = data;
-    while (node -> next) {
-        node = node -> next;
+    n->data = data;
+    while (node->next) {
+        node = node->next;
     }
-    n -> next = node -> next;
-    node -> next = n;
-    n -> pre = node;
-    L -> data ++;
+    n->next = node->next;
+    node->next = n;
+    n->pre = node;
+    L->data++;
 }
 
 /**
@@ -74,19 +73,19 @@ void tailInsert(Node* L, int data) {
  * @param data the data you want to delete
  * @return success flag
  */
-int delete(Node* L, int data) {
+int delete (Node* L, int data) {
     Node* node = L->next;
     while (node) {
-        if (node -> data == data) {
-            node -> pre -> next = node -> next;
-            if (node -> next) {
-                node -> next -> pre = node -> pre;
+        if (node->data == data) {
+            node->pre->next = node->next;
+            if (node->next) {
+                node->next->pre = node->pre;
             }
-            L -> data --;
+            L->data--;
             free(node);
             return TRUE;
         }
-        node = node -> next;
+        node = node->next;
     }
     return FALSE;
 }
@@ -96,10 +95,10 @@ int delete(Node* L, int data) {
  * @param L the head pointer of link list
  */
 void printList(Node* L) {
-    Node* node = L -> next;
+    Node* node = L->next;
     while (node) {
-        printf("%d -> ", node -> data);
-        node = node -> next;
+        printf("%d -> ", node->data);
+        node = node->next;
     }
     printf("NULL\n");
 }
@@ -108,8 +107,7 @@ void printList(Node* L) {
  * main function
  * @return null
  */
-int main()
-{
+int main() {
     Node* L = initList();
     headInsert(L, 1);
     headInsert(L, 2);
@@ -118,7 +116,7 @@ int main()
     tailInsert(L, 5);
     tailInsert(L, 6);
     printList(L);
-    delete(L, 6);
+    delete (L, 6);
     printList(L);
     return 0;
 }
