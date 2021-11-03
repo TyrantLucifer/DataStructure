@@ -3,7 +3,6 @@
 
 ## Linear List
 
-- [x] Sequence List
 - [x] Single Link List
 - [x] Loop Single Link List
 - [x] Double Link List
