@@ -23,5 +23,10 @@
 
 - [x] Binary Tree(Recursive Traverse)
 - [x] Binary Tree(Non Recursive Traverse)
+- [x] Binary Tree(Level traverse)
+- [x] Pre Thread Binary Tree
+- [x] In Thread Binary Tree
+- [x] Post Thread Binary Tree
 - [x] Binary Search Tree
+- [x] AVL Binary Tree
 - [x] Huffman Tree
