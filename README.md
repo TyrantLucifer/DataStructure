@@ -30,3 +30,14 @@
 - [x] Binary Search Tree
 - [x] AVL Binary Tree
 - [x] Huffman Tree
+
+## Graph
+
+- [x] Adjacency List Graph
+- [x] Adjacency Matrix Graph
+- [x] Dijkstra 
+- [x] Floyd 
+- [x] Kruskal
+- [x] Prim
+- [x] TopLogicalSort
+
