@@ -23,5 +23,28 @@
 
 - [x] Binary Tree(Recursive Traverse)
 - [x] Binary Tree(Non Recursive Traverse)
+- [x] Binary Tree(Level traverse)
+- [x] Pre Thread Binary Tree
+- [x] In Thread Binary Tree
+- [x] Post Thread Binary Tree
 - [x] Binary Search Tree
+- [x] AVL Binary Tree
 - [x] Huffman Tree
+
+## Graph
+
+- [x] Adjacency List Graph
+- [x] Adjacency Matrix Graph
+- [x] Dijkstra 
+- [x] Floyd 
+- [x] Kruskal
+- [x] Prim
+- [x] TopLogicalSort
+
+## Search
+
+- [x] Sequence Search
+- [x] Binary Search
+
+
+## To be continued...
