@@ -41,3 +41,10 @@
 - [x] Prim
 - [x] TopLogicalSort
 
+## Search
+
+- [x] Sequence Search
+- [x] Binary Search
+
+
+## To be continued...
