@@ -1,10 +1,9 @@
-/*************************************************************************
-* File Name: AdjacencyListGraph.c
-* Author: TyrantLucifer
-* E-mail: TyrantLucifer@gmail.com
-* Blog: https://tyrantlucifer.com
-* Created Time: Wed 21 Oct 2020 10:41:24 PM CST
- ************************************************************************/
+/**
+ * File Name: AdjacencyListGraph.c
+ * Author: tyrantlucifer
+ * E-mail: tyrantlucifer@gmail.com
+ * Blog: https://tyrantlucifer.com
+ */
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -87,7 +86,12 @@ void createGraph(VexType* vexs, ArcType* weight, ALGraph* G){
     }
 }
 
-/*Main function*/
+/**
+ * main function
+ * @param argc the num of args
+ * @param argv the command args
+ * @return int
+ */
 int main()
 {
     ALGraph* G = initGraph(2);
