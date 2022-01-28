@@ -1,5 +1,5 @@
 # Data Structure
-:triangular_ruler: Implementation of data structure algorithm by C
+:triangular_ruler: Implementation of data structure algorithm by c,c++ and java
 
 ## Linear List
 
