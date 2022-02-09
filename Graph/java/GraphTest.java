@@ -146,6 +146,56 @@ public class GraphTest {
             System.out.println(stack.pop());
     }
 
+    @Test
+    public void testCycleDetection() {
+        //有3个连通分量的图
+        SparseGraph g1 = new SparseGraph(18, false);
+        g1.addEdge(0, 1);
+        g1.addEdge(0, 2);
+        g1.addEdge(0, 3);
+        g1.addEdge(1, 2);
+        g1.addEdge(3, 4);
+        g1.addEdge(3, 5);
+        g1.addEdge(6, 7);
+        g1.addEdge(6, 8);
+        g1.addEdge(7, 9);
+        g1.addEdge(8, 9);
+        g1.addEdge(10, 11);
+        g1.addEdge(11, 12);
+        g1.addEdge(12, 13);
+        g1.addEdge(13, 14);
+        g1.addEdge(14, 15);
+        g1.addEdge(15, 16);
+        g1.addEdge(16, 17);
+
+        //下标是0到5的连通分量
+        SparseGraph g2 = new SparseGraph(6, false);
+        g2.addEdge(0, 1);
+        g2.addEdge(0, 2);
+        g2.addEdge(0, 3);
+        g2.addEdge(1, 2);
+        g2.addEdge(3, 4);
+        g2.addEdge(3, 5);
+
+        //下标是10到17的连通分量(无环)
+        SparseGraph g3 = new SparseGraph(8, false);
+        g3.addEdge(0, 1);
+        g3.addEdge(1, 2);
+        g3.addEdge(2, 3);
+        g3.addEdge(3, 4);
+        g3.addEdge(4, 5);
+        g3.addEdge(5, 6);
+        g3.addEdge(6, 7);
+
+
+        CycleDetection detection1 = new CycleDetection(g1);
+        CycleDetection detection2 = new CycleDetection(g2);
+        CycleDetection detection3 = new CycleDetection(g3);
+        System.out.println(detection1.hasCycle());
+        System.out.println(detection2.hasCycle());
+        System.out.println(detection3.hasCycle());
+    }
+
     /**
      *
      * @param nodeCount 节点数量
