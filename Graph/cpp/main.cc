@@ -2,6 +2,7 @@
 #include "SparseGraph.h"
 #include "GraphReader.h"
 #include "PathSearcher.h"
+#include "ShortestPathSearcher.h"
 
 using namespace std;
 int main() {
@@ -12,9 +13,15 @@ int main() {
     g.render();
     cout<<endl;
 
+    //深度优先遍历寻找路径
     PathSearcher<SparseGraph> path(g,13);
     cout<<"Path from 13 to 10 : " << endl;
     path.renderPath(10);
+
+    //广度优先遍历获取最短路径
+    ShortestPathSearcher<SparseGraph> bfs(g,4);
+    cout << "BFS-shortest path : ";
+    bfs.showPath(1);
 
     return 0;
 }
